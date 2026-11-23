@@ -1,0 +1,58 @@
+name: 问题反馈
+description: 报告一个可复现的问题（安全漏洞请走加密邮件，不要用这个模板）
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量填全，信息不足会显著拖慢定位速度。
+        **安全漏洞请勿在此提交**，见 [安全披露政策](https://www.cwflysim.cn/security)。
+  - type: dropdown
+    id: component
+    attributes:
+      label: 涉及模块
+      options:
+        - CWFLY-WEB（社区站点 / 后端 API）
+        - CWFLY-FSD（连线服务器）
+        - CWFLY-ATC（管制工作台）
+        - CWFLY-BOT（QQ 机器人）
+        - CWFLY-DOCS（文档站）
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 现象
+      description: 你期望发生什么，实际发生了什么
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开 ...
+        2. 点击 ...
+        3. 结果 ...
+    validations:
+      required: true
+  - type: input
+    id: account
+    attributes:
+      label: 涉及账号或 CID（可留空）
+      description: 请勿填写密码、Cookie 或令牌
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境
+      placeholder: |
+        浏览器/客户端及版本：
+        操作系统：
+        发生时间（含时区）：
+        网络环境（是否使用代理）：
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 截图或日志
+      description: 可直接拖拽图片；日志请删除其中的令牌、邮箱等敏感信息
